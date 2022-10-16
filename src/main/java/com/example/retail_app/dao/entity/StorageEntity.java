@@ -1,8 +1,11 @@
 package com.example.retail_app.dao.entity;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Getter
@@ -25,6 +28,14 @@ public class StorageEntity {
     private String address;
 
     private int productCount;
+
+    @CreationTimestamp
+    @Column(name = "created_at", columnDefinition = "timestamp default now()",nullable = false)
+    private LocalDateTime createdAt= LocalDateTime.now();
+
+    @UpdateTimestamp
+    @Column(name = "updated_at", columnDefinition = "timestamp default now()", nullable = false)
+    private LocalDateTime updatedAt=LocalDateTime.now();
 
 
 }
