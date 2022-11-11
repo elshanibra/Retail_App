@@ -4,12 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class StorageDto {
     private long id;
-    private BranchDto branch;
+    private List<BranchDto> branches;
+    private List<BrandDto> brands;
     private String address;
     private int productCount;
 }

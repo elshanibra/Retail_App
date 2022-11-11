@@ -41,12 +41,12 @@ public class BranchEntity {
     private List<StorageEntity> storage;
 
     @CreationTimestamp
-    @Column(name = "created_at", columnDefinition = "timestamp default now()",nullable = false)
-    private LocalDateTime createdAt= LocalDateTime.now();
+    @Column(name = "created_at", columnDefinition = "timestamp default now()", nullable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @UpdateTimestamp
     @Column(name = "updated_at", columnDefinition = "timestamp default now()", nullable = false)
-    private LocalDateTime updatedAt=LocalDateTime.now();
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
     @ManyToOne
     private BrandEntity brand;

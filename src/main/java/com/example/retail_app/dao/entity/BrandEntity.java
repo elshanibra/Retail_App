@@ -22,14 +22,16 @@ public class BrandEntity {
 
     @Column(name = "name", nullable = false)
     private String name;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "brand")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "brand")
     private List<BranchEntity> branchList;
 
     @CreationTimestamp
-    @Column(name = "created_at", columnDefinition = "timestamp default now()",nullable = false)
-    private LocalDateTime createdAt= LocalDateTime.now();
+    @Column(name = "created_at", columnDefinition = "timestamp default now()", nullable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @UpdateTimestamp
     @Column(name = "updated_at", columnDefinition = "timestamp default now()", nullable = false)
-    private LocalDateTime updatedAt=LocalDateTime.now();
+    private LocalDateTime updatedAt = LocalDateTime.now();
+
+
 }

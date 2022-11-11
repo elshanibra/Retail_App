@@ -6,7 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,19 +23,19 @@ public class StorageEntity {
 
     @ManyToMany(mappedBy = "storage", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
-    private Set<BranchEntity> branches;
+    private List<BranchEntity> branches;
 
     private String address;
 
     private int productCount;
 
     @CreationTimestamp
-    @Column(name = "created_at", columnDefinition = "timestamp default now()",nullable = false)
-    private LocalDateTime createdAt= LocalDateTime.now();
+    @Column(name = "created_at", columnDefinition = "timestamp default now()", nullable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @UpdateTimestamp
     @Column(name = "updated_at", columnDefinition = "timestamp default now()", nullable = false)
-    private LocalDateTime updatedAt=LocalDateTime.now();
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
 
 }

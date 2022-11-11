@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BranchDto {
     private Long id;
+    private Long brandId;
     private String name;
     private String branchAddress;
     private SaleType typeOfSale;
     private StorageDto storage;
     private AcceptPayment acceptPayment;
-
 
 }
